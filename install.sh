@@ -17,6 +17,12 @@ brew bundle
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Create ~/dev/workspace
+mkdir -p $HOME/dev/workspace
+
 # Install global NPM packages
 # npm install -g spaceship-zsh-theme
 
