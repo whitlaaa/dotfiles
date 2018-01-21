@@ -35,6 +35,7 @@ brew 'wget'
 brew 'yarn'
 brew 'zsh'
 brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
 
 cask 'caffeine'
 cask 'ccleaner'
