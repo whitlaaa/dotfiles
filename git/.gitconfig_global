@@ -9,6 +9,7 @@
   status = auto
   ui = true
 [core]
+  editor = "nano"
   excludesfile = ~/.dotfiles/.gitignore_global
 [merge]
   tool = kdiff3
