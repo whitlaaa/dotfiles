@@ -4,7 +4,7 @@ tap 'caskroom/fonts'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
 
-cask 'adoptopenjdk8'
+cask 'adoptopenjdk12'
 
 brew 'ant'
 brew 'azure-cli'

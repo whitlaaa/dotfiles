@@ -12,5 +12,5 @@ export PATH="$DOTFILES/bin:$PATH"
 
 # Golang
 export GOPATH="$HOME/dev/workspace/go"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-12.jdk/Contents/Home"
 export PATH="$PATH:$GOPATH/bin"
