@@ -11,10 +11,10 @@ While this specifically targets a Mac setup, it does at least provide a referenc
 First, go through the checklist below to make sure you didn't forget anything before you wipe your hard drive.
 
 - Did you commit and push any changes/branches to your git repositories?
-- Did you not forget any important documents in non-iCloud directories?
+- Did you remember to backup any important documents in non-iCloud directories?
 - Did you save all of your work in apps which aren't synced through iCloud?
-- Did you not forget to export important data from your local database?
-- Did you update [mackup](https://github.com/lra/mackup) to the latest version and ran `mackup backup`?
+- Did you remember to export important data from your local database?
+- Did you update [mackup](https://github.com/lra/mackup) to the latest version and run `mackup backup`?
 
 ### Installing macOS cleanly
 
@@ -40,6 +40,4 @@ Your Mac is now ready to use!
 
 ## VS Code
 
-All Visual Studio Code settings, keybindings, and extensions are synced via the [Setting Sync Extension](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync). This [gist](https://gist.github.com/whitlaaa/edd824ee2034ed08b5f79d5506af11ac) holds the synced settings.
-
-I chose syncing via the extension instead of [Mackup](https://github.com/lra/mackup/) since it also syncs installed extensions, which Mackup doesn't take care of.
+All Visual Studio Code settings, keybindings, and extensions are synced via the builtin settings sync functionality.
