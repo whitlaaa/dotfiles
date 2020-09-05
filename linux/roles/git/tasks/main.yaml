@@ -1,0 +1,23 @@
+- name: Install git
+  become: true
+  apt:
+    name:
+      - git
+      - libsecret-1-dev
+      - libsecret-1-0
+      - meld
+    state: present
+    update_cache: true
+    cache_valid_time: "3600"
+
+- name: Copy global gitconfig
+  copy:
+    src: "files/.gitconfig_global"
+    dest: "~/.gitconfig"
+    mode: '0644'
+
+- name: Copy global gitignore
+  copy:
+    src: "files/.gitignore_global"
+    dest: "~/.gitignore_global"
+    mode: '0644'

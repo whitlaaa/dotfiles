@@ -1,0 +1,24 @@
+- name: Install apt packages
+  become: true
+  apt:
+    name:
+      - bash-completion
+      - curl
+      # - docker-compose
+      # - docker.io
+      # - fzf
+      - htop
+      - jq
+      - software-properties-common
+      - tree
+      - wget
+      # - zsh
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Create primary workspace directory if it does not exist
+  file:
+    path: "~/dev/workspace"
+    state: directory
+    mode: "0755"

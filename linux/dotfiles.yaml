@@ -1,0 +1,6 @@
+- name: Setup local
+  hosts: localhost
+  roles:
+    - role: base
+    - role: git
+    - role: fish
