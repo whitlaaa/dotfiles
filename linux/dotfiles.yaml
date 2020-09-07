@@ -2,5 +2,14 @@
   hosts: localhost
   roles:
     - role: base
+      tags:
+        - base
     - role: git
+      tags:
+        - git
     - role: fish
+      tags:
+        - fish
+    - role: asdf
+      tags:
+        - asdf

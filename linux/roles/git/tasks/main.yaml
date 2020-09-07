@@ -13,11 +13,11 @@
 - name: Copy global gitconfig
   copy:
     src: "files/.gitconfig_global"
-    dest: "~/.gitconfig"
-    mode: '0644'
+    dest: "{{ dotfiles_user_home }}/.gitconfig"
+    mode: "0644"
 
 - name: Copy global gitignore
   copy:
     src: "files/.gitignore_global"
-    dest: "~/.gitignore_global"
-    mode: '0644'
+    dest: "{{ dotfiles_user_home }}/.gitignore_global"
+    mode: "0644"

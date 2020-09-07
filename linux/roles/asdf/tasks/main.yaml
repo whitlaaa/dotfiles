@@ -1,0 +1,14 @@
+- name: Clone asdf repository
+  git:
+    repo: git@github.com:asdf-vm/asdf.git
+    dest: "{{ dotfiles_user_home }}/.asdf"
+    version: v0.8.0-rc1
+    force: yes
+
+- name: Add asdf to shell
+  lineinfile:
+    path: "{{ dotfiles_user_home }}/.config/fish/config.fish"
+    line: source ~/.asdf/asdf.fish
+
+- name: Setup asdf autocompletion
+  shell: "cp {{ dotfiles_user_home }}/.asdf/completions/asdf.fish {{ dotfiles_user_home }}/.config/fish/completions"
