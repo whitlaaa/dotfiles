@@ -11,8 +11,8 @@
     cache_valid_time: "3600"
 
 - name: Copy global gitconfig
-  copy:
-    src: "files/.gitconfig_global"
+  template:
+    src: ".gitconfig_global.j2"
     dest: "{{ dotfiles_user_home }}/.gitconfig"
     mode: "0644"
 
