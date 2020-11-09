@@ -1,0 +1,20 @@
+- name: Install fish
+  become: true
+  apt:
+    name: fish
+    state: present
+    update_cache: true
+    cache_valid_time: "3600"
+
+- name: Set fish as default shell
+  become: true
+  user:
+    name: "{{ dotfiles_user }}"
+    state: present
+    shell: /usr/bin/fish
+
+- name: Copy config files
+  copy:
+    src: "files/"
+    dest: "{{ dotfiles_user_home }}/.config/fish/"
+    mode: "0644"

@@ -1,0 +1,57 @@
+[user]
+  name = {{ lookup('env', 'GIT_CONFIG_NAME') }}
+  email = {{ lookup('env', 'GIT_CONFIG_EMAIL') }}
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  pager = true
+  status = auto
+  ui = true
+[core]
+  editor = "nano"
+  excludesfile = ~/.gitignore_global
+[alias]
+  a = add
+  aa = add --all
+  ae = add --edit
+  ai = add --interactive
+  br = branch
+  cam = commit -am
+  cl = clone
+  co = checkout
+  cob = checkout -b
+  com = commit
+  commend = commit --amend
+  cm = commit -m
+  df = diff
+  dfc = diff --cached
+  dfs = diff --staged
+  dt = difftool
+  globalconf = config --global --list
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  l = log --oneline --decorate
+  localconf = config --list
+  merged = branch -a --merged
+  mg = merge
+  mgnoff = merge --no-ff
+  mt = mergetool
+  po = push origin
+  notmerged = branch -a --no-merged
+  rb = rebase
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbi = rebase --interactive
+  rh = reset --hard
+  rh1 = reset --hard HEAD^1
+  rh2 = reset --hard HEAD^2
+  sl = shortlog
+  st = status -s
+  stasha = stash apply
+  stashp = stash pop
+  undo = reset --soft HEAD^
+  unstage = reset HEAD --
+  wd = diff --color-words
+  wds = diff --color-words --staged
+[pull]
+  rebase = false
