@@ -1,0 +1,56 @@
+- name: Homebrew taps
+  homebrew_tap:
+    tap: "{{ item.name }}"
+    state: present
+  loop:
+    - homebrew/core
+    - homebrew/bundle
+    - caskroom/fonts
+    - caskroom/cask
+    - caskroom/versions
+
+- name: Homebrew casks
+  homebrew_cask:
+    cask: "{{ item.name }}"
+    state: present
+    update_homebrew: yes
+  loop:
+    - alacritty
+    - ccleaner
+    - docker-edge
+    - dropbox
+    - firefox
+    - google-backup-and-sync
+    - google-chrome
+    - hyper
+    - rectangle
+    - slack
+    - visual-studio-code-insiders
+
+- name: Homebrew formulas
+  homebrew:
+    formula: "{{ item.name }}"
+    state: present
+  loop:
+    - azure-cli
+    - bash
+    - coreutils
+    - findutils
+    - font-hack-nerd-font
+    - git
+    - htop
+    - httpie
+    - mackup
+    - mas
+    - ripgrep
+    - starship
+    - tree
+    - trash
+    - wget
+    - zaquestion/tap/lab
+
+- name: Create primary workspace directory if it does not exist
+  file:
+    path: "{{ dotfiles_user_home }}/dev/workspace"
+    state: directory
+    mode: "0755"

@@ -1,6 +1,6 @@
 [user]
-  name = Alex Whitler
-  email = alex.whitler@gmail.com
+  name = {{ lookup('env', 'GIT_CONFIG_NAME') }}
+  email = {{ lookup('env', 'GIT_CONFIG_EMAIL') }}
 [color]
   branch = auto
   diff = auto
@@ -10,11 +10,7 @@
   ui = true
 [core]
   editor = "nano"
-  excludesfile = ~/.dotfiles/.gitignore_global
-[merge]
-  tool = kdiff3
-[difftool "kdiff3"]
-[mergetool "kdiff3"]
+  excludesfile = ~/.gitignore_global
 [alias]
   a = add
   aa = add --all

@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-# Thanks to Mathias Bynens! https://mths.be/macos
+# ~/.macos — https://mths.be/macos
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
 
 # Ask for the administrator password upfront
 sudo -v
@@ -286,7 +290,7 @@ defaults write com.apple.ical "first minute of work hours" 540
 ###############################################################################
 
 # Custom DateFormat
-defaults write com.apple.menuextra.clock DateFormat "EEE MMM d HH:mm"
+defaults write com.apple.menuextra.clock DateFormat "EEE MMM d HH:mm:ss"
 
 ###############################################################################
 # Photos                                                                      #
@@ -306,4 +310,3 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 done
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
-

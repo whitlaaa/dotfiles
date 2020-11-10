@@ -1,0 +1,23 @@
+- name: Install fish
+  homebrew:
+    formula: fish
+    state: present
+
+- name: Set fish as default shell
+  become: true
+  user:
+    name: "{{ dotfiles_user }}"
+    state: present
+    shell: /usr/local/bin/fish
+
+- name: Copy fish config files
+  copy:
+    src: "files/fish/"
+    dest: "{{ dotfiles_user_home }}/.config/fish/"
+    mode: "0644"
+
+- name: Copy alacritty config files
+  copy:
+    src: "files/alacritty/"
+    dest: "{{ dotfiles_user_home }}/.config/alacritty/"
+    mode: "0644"
