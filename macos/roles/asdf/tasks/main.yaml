@@ -12,3 +12,19 @@
 
 - name: Setup asdf autocompletion
   shell: "cp {{ dotfiles_user_home }}/.asdf/completions/asdf.fish {{ dotfiles_user_home }}/.config/fish/completions"
+
+- name: Setup NodeJS pgp keys
+  become: true
+  command: "bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'"
+
+- name: Add asdf plugins
+  command: "asdf plugin-add {{ item.key }}"
+  loop: "{{ asdf_plugins | dict2items }}"
+
+- name: Install asdf plugins
+  command: "asdf install {{ item.key }} {{ item.value }}"
+  loop: "{{ asdf_plugins | dict2items }}"
+
+- name: Set asdf globals
+  command: "asdf global {{ item.key }} {{ item.value }}"
+  loop: "{{ asdf_plugins | dict2items }}"
