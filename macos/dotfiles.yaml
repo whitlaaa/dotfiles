@@ -7,9 +7,9 @@
     - role: git
       tags:
         - git
-    - role: fish
+    - role: terminal
       tags:
-        - fish
+        - terminal
     - role: asdf
       tags:
         - asdf

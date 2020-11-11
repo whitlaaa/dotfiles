@@ -8,6 +8,7 @@ if test ! $(which brew); then
 fi
 
 brew install ansible
+ansible-playbook dotfiles.yaml --ask-become-pass
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
