@@ -53,5 +53,6 @@
   unstage = reset HEAD --
   wd = diff --color-words
   wds = diff --color-words --staged
+  wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
 [pull]
   rebase = false
