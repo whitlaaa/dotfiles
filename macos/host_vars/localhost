@@ -1,2 +1,2 @@
 dotfiles_user: "{{ lookup('env', 'DOTFILES_USER') }}"
-dotfiles_user_home: "/home/{{ dotfiles_user }}"
+dotfiles_user_home: "/Users/{{ dotfiles_user }}"
