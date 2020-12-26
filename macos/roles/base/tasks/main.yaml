@@ -20,6 +20,7 @@
     - docker-edge
     - dropbox
     - firefox
+    - font-fira-code
     - google-backup-and-sync
     - google-chrome
     - hyper
@@ -36,7 +37,6 @@
     - bash
     - coreutils
     - findutils
-    - font-hack-nerd-font
     - git
     - htop
     - httpie
