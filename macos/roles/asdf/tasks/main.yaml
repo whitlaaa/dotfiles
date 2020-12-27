@@ -1,6 +1,6 @@
 - name: Clone asdf repository
   git:
-    repo: git@github.com:asdf-vm/asdf.git
+    repo: https://github.com/asdf-vm/asdf.git
     dest: "{{ dotfiles_user_home }}/.asdf"
     version: v0.8.0
     force: yes
@@ -13,13 +13,12 @@
 - name: Setup asdf autocompletion
   shell: "cp {{ dotfiles_user_home }}/.asdf/completions/asdf.fish {{ dotfiles_user_home }}/.config/fish/completions"
 
-- name: Setup NodeJS pgp keys
-  become: true
-  command: "bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'"
-
 - name: Add asdf plugins
   command: "asdf plugin-add {{ item.key }}"
   loop: "{{ asdf_plugins | dict2items }}"
+
+- name: Setup NodeJS pgp keys
+  command: "bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'"
 
 - name: Install asdf plugins
   command: "asdf install {{ item.key }} {{ item.value }}"

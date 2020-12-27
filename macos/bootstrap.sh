@@ -8,8 +8,9 @@ if test ! $(which brew); then
 fi
 
 brew install ansible
+ansible-galaxy install -r requirements.yml
 ansible-playbook dotfiles.yaml --ask-become-pass
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
-source .macos
+# source .macos

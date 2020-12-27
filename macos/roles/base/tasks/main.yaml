@@ -1,17 +1,15 @@
 - name: Homebrew taps
   homebrew_tap:
-    tap: "{{ item.name }}"
+    tap: "{{ item }}"
     state: present
   loop:
     - homebrew/core
-    - homebrew/bundle
-    - caskroom/fonts
-    - caskroom/cask
-    - caskroom/versions
+    - homebrew/cask-fonts
+    - homebrew/cask
 
 - name: Homebrew casks
   homebrew_cask:
-    cask: "{{ item.name }}"
+    cask: "{{ item }}"
     state: present
     update_homebrew: yes
   loop:
@@ -24,13 +22,14 @@
     - google-backup-and-sync
     - google-chrome
     - hyper
+    - keepassxc
     - rectangle
     - slack
     - visual-studio-code-insiders
 
 - name: Homebrew formulas
   homebrew:
-    formula: "{{ item.name }}"
+    formula: "{{ item }}"
     state: present
   loop:
     - azure-cli
@@ -38,6 +37,7 @@
     - coreutils
     - findutils
     - git
+    - gpg
     - htop
     - httpie
     - mackup
